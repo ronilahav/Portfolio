@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Text?>
+<?import view.levelDisplayers.Level2DDisplayer?>
+
+<BorderPane xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="view.MyView"> 
+   <center>
+      <Level2DDisplayer fx:id="levelDisplayer"  width="200.0" BorderPane.alignment="CENTER" 
+      					boxDestinationFileName="./resources/EndPoint_Purple.png" boxFileName="./resources/Crate_Purple.png" wallFileName="./resources/Wall_Brown.png" floorFileName="./resources/GroundGravel_Concrete.png" 
+      					characterFileName="./resources/Character4.png" characterFileNameW="./resources/Character5.png" characterDW="./resources/Character6.png" characterUS="./resources/Character7.png" characterUW="./resources/Character8.png" 
+      					characterRS="./resources/Character2.png" characterRW="./resources/Character3.png" characterLS="./resources/Character1.png" characterLW="./resources/Character10.png" 
+      					onKeyPressed="#handle" downKey="Down"  height="200.0" leftKey="Left" rightKey="Right" upKey="Up"/>
+   </center>
+   <top>
+      <MenuBar BorderPane.alignment="CENTER">
+        <menus>
+          <Menu mnemonicParsing="false" text="File">
+            <items>
+                  <MenuItem mnemonicParsing="false" onAction="#loadFile" text="Load" />
+                  <MenuItem mnemonicParsing="false" onAction="#saveFile" text="Save" />
+              <MenuItem mnemonicParsing="false" onAction="#exit" text="Exit" />
+            </items>
+          </Menu>
+       	  <Menu mnemonicParsing="false" text="Server">
+               <items>
+                  <MenuItem mnemonicParsing="false" onAction="#startServer" text="On" />
+                  <MenuItem mnemonicParsing="false" onAction="#stopServer" text="Off" />
+               </items>
+            </Menu>	
+        </menus>
+      </MenuBar>
+   </top>
+   <bottom>
+      <Text fx:id="outputText" strokeType="OUTSIDE" strokeWidth="0.0" text="Welcome" wrappingWidth="194.13671875" BorderPane.alignment="CENTER" />
+   </bottom>
+   <left>
+      <VBox prefHeight="190.0" prefWidth="40.0" spacing="30.0" BorderPane.alignment="CENTER">
+         <children>
+            <VBox spacing="10.0">
+               <children>
+                  <Label text="Time :" />
+                  <Text fx:id="timeText" strokeType="OUTSIDE" strokeWidth="0.0" text="0" wrappingWidth="60.13671875">
+                     <VBox.margin>
+                        <Insets left="5.0" />
+                     </VBox.margin>
+                  </Text>
+               </children>
+            </VBox>
+            <VBox spacing="10.0">
+               <children>
+                  <Label text="Steps :" />
+                  <Text fx:id="stepsText" strokeType="OUTSIDE" strokeWidth="0.0" text="0" wrappingWidth="55.13671875">
+                     <VBox.margin>
+                        <Insets left="5.0" />
+                     </VBox.margin>
+                  </Text>
+               </children>
+            </VBox>
+         </children>
+         <BorderPane.margin>
+            <Insets left="10.0" top="10.0" />
+         </BorderPane.margin>
+      </VBox>
+   </left>
+</BorderPane>
